@@ -6,6 +6,8 @@
 //
 
 #include <iostream>
+#include <string>
+#include <vector>
 
 void printMenu()
 {
@@ -98,11 +100,28 @@ void processUserOption(int userOption)
 }
 
 int main(int argc, const char * argv[]) {
-    while (true)
-    {
-        printMenu();
-        int userOption = getUserOption();
-        processUserOption(userOption);
-    }
+
+    enum class OrderBookType{bid, ask};
+
+    std::vector<double> prices;
+    std::vector<double> amounts;
+    std::vector<std::string> timestamps;
+    std::vector<std::string> products;
+    std::vector<OrderBookType> orderTypes;
+
+    prices.push_back(5000.01);
+    amounts.push_back(0.001);
+    timestamps.push_back("2020/03/17 17:01:24.884492");
+    timestamps.push_back("ETH/BTC");
+    orderTypes.push_back(OrderBookType::bid);
+    
+    std::cout << "prices: " << prices[0] << std::endl;
+//
+//    while (true)
+//    {
+//        printMenu();
+//        int userOption = getUserOption();
+//        processUserOption(userOption);
+//    }
     return 0;
 }
