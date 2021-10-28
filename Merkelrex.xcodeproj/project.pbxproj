@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1D4491272A307F00C716AF /* OrderBookEntry.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D448F272A307F00C716AF /* OrderBookEntry.cpp */; };
 		1DB84FBD27172CFC00815834 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB84FBC27172CFC00815834 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D1D448F272A307F00C716AF /* OrderBookEntry.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OrderBookEntry.cpp; sourceTree = "<group>"; };
+		1D1D4490272A307F00C716AF /* OrderBookEntry.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = OrderBookEntry.hpp; sourceTree = "<group>"; };
 		1DB84FB927172CFC00815834 /* Merkelrex */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Merkelrex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB84FBC27172CFC00815834 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				1DB84FBC27172CFC00815834 /* main.cpp */,
+				1D1D448F272A307F00C716AF /* OrderBookEntry.cpp */,
+				1D1D4490272A307F00C716AF /* OrderBookEntry.hpp */,
 			);
 			path = Merkelrex;
 			sourceTree = "<group>";
@@ -118,6 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D1D4491272A307F00C716AF /* OrderBookEntry.cpp in Sources */,
 				1DB84FBD27172CFC00815834 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
