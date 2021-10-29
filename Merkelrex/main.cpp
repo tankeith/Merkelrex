@@ -11,8 +11,11 @@
 #include "OrderBookEntry.hpp"
 #include "MerkelMain.hpp"
 
-int main(int argc, const char * argv[]) {
-
+int main(int argc, const char * argv[])
+{
+    MerkelMain app{};
+    app.init();
+    
 //    std::vector<double> prices;
 //    std::vector<double> amounts;
 //    std::vector<std::string> timestamps;
@@ -36,21 +39,21 @@ int main(int argc, const char * argv[]) {
 //        processUserOption(userOption);
 //    }
     
-    std::vector<OrderBookEntry> orders;
-
-    orders.push_back( OrderBookEntry{10000,
-                        0.002,
-                        "2020/03/17 17:01:24.884492",
-                        "BTC/USDT",
-                        OrderBookType::bid}
-                                     );
-    
-    orders.push_back( OrderBookEntry{5000,
-                        0.002,
-                        "2020/03/17 17:01:24.884492",
-                        "BTC/USDT",
-                        OrderBookType::bid}
-                                     );
+//    std::vector<OrderBookEntry> orders;
+//
+//    orders.push_back( OrderBookEntry{10000,
+//                        0.002,
+//                        "2020/03/17 17:01:24.884492",
+//                        "BTC/USDT",
+//                        OrderBookType::bid}
+//                                     );
+//
+//    orders.push_back( OrderBookEntry{5000,
+//                        0.002,
+//                        "2020/03/17 17:01:24.884492",
+//                        "BTC/USDT",
+//                        OrderBookType::bid}
+//                                     );
     
 //    OrderBookEntry order1{10000,
 //                          0.002,
@@ -65,25 +68,25 @@ int main(int argc, const char * argv[]) {
 //    order1.product = "BTC/USDT";
 //    order1.orderType = OrderBookType::bid;
     
-    // 2. Iterate by reference (access original version in the vector)
-    // Iterate over all the elements in orders
-    for (OrderBookEntry& order : orders)
-    {
-        std::cout << "The price is " << order.price << std::endl; // work on original version
-    }
-    
-    // 2. Classic array syntax
-    for (unsigned int i = 0; i < orders.size(); ++i)
-    {
-        std::cout << "The price is " << orders[i].price << std::endl; // work on original version
-    }
-    
-    // 3. Object style syntax
-    for (unsigned int i = 0; i < orders.size(); ++i)
-    {
-        std::cout << "The price is " << orders.at(i).price << std::endl;
-    }
-    
+//    // 2. Iterate by reference (access original version in the vector)
+//    // Iterate over all the elements in orders
+//    for (OrderBookEntry& order : orders)
+//    {
+//        std::cout << "The price is " << order.price << std::endl; // work on original version
+//    }
+//
+//    // 2. Classic array syntax
+//    for (unsigned int i = 0; i < orders.size(); ++i)
+//    {
+//        std::cout << "The price is " << orders[i].price << std::endl; // work on original version
+//    }
+//
+//    // 3. Object style syntax
+//    for (unsigned int i = 0; i < orders.size(); ++i)
+//    {
+//        std::cout << "The price is " << orders.at(i).price << std::endl;
+//    }
+//
     
 //    std::cout << "The price is " << orders[0].price << std::endl;
 //    std::cout << "The price is " << orders[1].price << std::endl;
