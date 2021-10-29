@@ -15,7 +15,7 @@ int main(int argc, const char * argv[])
 {
     MerkelMain app{};
     app.init();
-    
+        
 //    std::vector<double> prices;
 //    std::vector<double> amounts;
 //    std::vector<std::string> timestamps;
