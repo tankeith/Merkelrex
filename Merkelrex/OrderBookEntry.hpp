@@ -5,13 +5,8 @@
 //  Created by Keith Tan on 28/10/21.
 //
 
-#ifndef OrderBookEntry_hpp
-#define OrderBookEntry_hpp
-
-#include <stdio.h>
+#pragma once
 #include <string>
-
-#endif /* OrderBookEntry_hpp */
 
 enum class OrderBookType{bid, ask};
 

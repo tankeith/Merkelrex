@@ -5,12 +5,9 @@
 //  Created by Keith Tan on 30/10/21.
 //
 
-#ifndef MerkelMain_hpp
-#define MerkelMain_hpp
-
-#include <stdio.h>
-
-#endif /* MerkelMain_hpp */
+#pragma once
+#include <vector>
+#include "OrderBookEntry.hpp"
 
 class MerkelMain
 {
@@ -19,6 +16,7 @@ class MerkelMain
         /** Call this to start the sim */
         void init();
     private:
+        void loadOrderBook();
         void printMenu();
         void printHelp();
         void printMarketStats();
@@ -28,4 +26,6 @@ class MerkelMain
         void gotoNextTimeFrame();
         int getUserOption();
         void processUserOption(int userOption);
+    
+        std::vector<OrderBookEntry> orders;
 };

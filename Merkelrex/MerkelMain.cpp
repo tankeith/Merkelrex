@@ -6,7 +6,9 @@
 //
 
 #include <iostream>
+#include <vector>
 #include "MerkelMain.hpp"
+#include "OrderBookEntry.hpp"
 
 // constructor
 MerkelMain::MerkelMain()
@@ -21,10 +23,34 @@ void MerkelMain::init()
     int input;
     while (true)
     {
+        loadOrderBook();
         printMenu();
         input = getUserOption();
         processUserOption(input);
     }
+}
+
+void MerkelMain::loadOrderBook()
+{
+    orders.push_back( OrderBookEntry{100,
+                        0.002,
+                        "2020/03/17 17:01:24.884492",
+                        "BTC/USDT",
+                        OrderBookType::bid}
+                                     );
+
+    orders.push_back( OrderBookEntry{200,
+                        0.002,
+                        "2020/03/17 17:01:24.884492",
+                        "BTC/USDT",
+                        OrderBookType::bid}
+                                     );
+//
+//    OrderBookEntry order1{10000,
+//                          0.002,
+//                          "2020/03/17 17:01:24.884492",
+//                          "BTC/USDT",
+//                          OrderBookType::bid}; // creates an object
 }
 
 void MerkelMain::printMenu()
@@ -52,7 +78,12 @@ void MerkelMain::printHelp()
 
 void MerkelMain::printMarketStats()
 {
-    std::cout << "Market looks good" << std::endl;
+    std::cout << "Orderbook contains: " << orders.size() << " entries" << std::endl;
+    
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "The entries are: " << orders.at(i).price << std::endl;
+    }    
 }
 
 void MerkelMain::enterOffer()

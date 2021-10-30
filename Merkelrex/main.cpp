@@ -39,27 +39,7 @@ int main(int argc, const char * argv[])
 //        processUserOption(userOption);
 //    }
     
-//    std::vector<OrderBookEntry> orders;
-//
-//    orders.push_back( OrderBookEntry{10000,
-//                        0.002,
-//                        "2020/03/17 17:01:24.884492",
-//                        "BTC/USDT",
-//                        OrderBookType::bid}
-//                                     );
-//
-//    orders.push_back( OrderBookEntry{5000,
-//                        0.002,
-//                        "2020/03/17 17:01:24.884492",
-//                        "BTC/USDT",
-//                        OrderBookType::bid}
-//                                     );
-    
-//    OrderBookEntry order1{10000,
-//                          0.002,
-//                          "2020/03/17 17:01:24.884492",
-//                          "BTC/USDT",
-//                          OrderBookType::bid}; // creates an object
+
 
     
 //    order1.price = 100000;
