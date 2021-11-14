@@ -12,6 +12,7 @@ OrderBookEntry::OrderBookEntry(double _price,
                std::string _timestamp,
                std::string _product,
                OrderBookType _orderType)
+// initialization list
 : price(_price),
   amount(_amount),
   timestamp(_timestamp),
