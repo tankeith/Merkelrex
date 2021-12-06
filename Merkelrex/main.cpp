@@ -10,12 +10,14 @@
 #include <vector>
 #include "OrderBookEntry.hpp"
 #include "MerkelMain.hpp"
+#include "CSVReader.hpp"
 
-int main(int argc, const char * argv[])
+int main()
 {
     MerkelMain app{};
     app.init();
-        
+    
+    
 //    std::vector<double> prices;
 //    std::vector<double> amounts;
 //    std::vector<std::string> timestamps;

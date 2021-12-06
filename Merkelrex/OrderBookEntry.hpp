@@ -8,7 +8,7 @@
 #pragma once
 #include <string>
 
-enum class OrderBookType{bid, ask};
+enum class OrderBookType{bid, ask, unknown};
 
 class OrderBookEntry
 {
@@ -19,6 +19,10 @@ public:
                    std::string _timestamp,
                    std::string _product,
                    OrderBookType _orderType);
+    
+    // function that converts string into OrderBookType
+    static OrderBookType stringToOrderBookType(std::string s);
+    
     // data members holding data coming in through the constructor
     double price;
     double amount;
