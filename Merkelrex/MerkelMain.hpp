@@ -17,7 +17,6 @@ class MerkelMain
         /** Call this to start the sim */
         void init();
     private:
-        void loadOrderBook();
         void printMenu();
         void printHelp();
         void printMarketStats();
