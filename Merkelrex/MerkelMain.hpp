@@ -8,6 +8,7 @@
 #pragma once
 #include <vector>
 #include "OrderBookEntry.hpp"
+#include "OrderBook.hpp"
 
 class MerkelMain
 {
@@ -27,5 +28,5 @@ class MerkelMain
         int getUserOption();
         void processUserOption(int userOption);
     
-        std::vector<OrderBookEntry> orders;
+    OrderBook orderBook{"20200317.csv"};        
 };
