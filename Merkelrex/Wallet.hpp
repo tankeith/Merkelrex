@@ -5,6 +5,7 @@
 //  Created by Keith Tan on 8/12/21.
 //
 
+#pragma once
 #include <string>
 #include <map>
 
@@ -20,6 +21,6 @@ public:
     std::string toString();
     
 private:
-    /** data structure mapping from string to double*/
+    /** map is the data type used to store the currency and wallet; it maps from string to double*/
     std::map<std::string, double> currencies;
 };
