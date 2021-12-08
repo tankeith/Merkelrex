@@ -24,7 +24,7 @@ public:
     static OrderBookType stringToOrderBookType(std::string s);
     
     // function that sorts orders in the OrderBook by timestamp (from earliest to latest)
-    static bool compareByTimestamp(OrderBookEntry& e1, OrderBookEntry& e2)
+    static bool compareByTimestamp(const OrderBookEntry& e1, const OrderBookEntry& e2)
     {
         return e1.timestamp < e2.timestamp;
     }
