@@ -11,6 +11,7 @@
 		1D4FF47C275E636E00151D5F /* OrderBook.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4FF47A275E636E00151D5F /* OrderBook.cpp */; };
 		1D55124B2740A15000C4AFBE /* CSVReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5512492740A15000C4AFBE /* CSVReader.cpp */; };
 		1D7BC6D4272C54C80069F0CD /* MerkelMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D7BC6D2272C54C80069F0CD /* MerkelMain.cpp */; };
+		1D8916352760BECA00769340 /* Wallet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D8916332760BECA00769340 /* Wallet.cpp */; };
 		1DB84FBD27172CFC00815834 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DB84FBC27172CFC00815834 /* main.cpp */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 		1D7BC6D2272C54C80069F0CD /* MerkelMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MerkelMain.cpp; sourceTree = "<group>"; };
 		1D7BC6D3272C54C80069F0CD /* MerkelMain.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MerkelMain.hpp; sourceTree = "<group>"; };
 		1D8916312760B36500769340 /* test.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.csv; sourceTree = "<group>"; };
+		1D8916332760BECA00769340 /* Wallet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Wallet.cpp; sourceTree = "<group>"; };
+		1D8916342760BECA00769340 /* Wallet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Wallet.hpp; sourceTree = "<group>"; };
 		1D9F53F1275FBA33004CB189 /* 20200317.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 20200317.csv; sourceTree = "<group>"; };
 		1DB84FB927172CFC00815834 /* Merkelrex */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Merkelrex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DB84FBC27172CFC00815834 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 			children = (
 				1D9F53F1275FBA33004CB189 /* 20200317.csv */,
 				1D8916312760B36500769340 /* test.csv */,
+				1D8916332760BECA00769340 /* Wallet.cpp */,
+				1D8916342760BECA00769340 /* Wallet.hpp */,
 				1DB84FBC27172CFC00815834 /* main.cpp */,
 				1D4FF47A275E636E00151D5F /* OrderBook.cpp */,
 				1D4FF47B275E636E00151D5F /* OrderBook.hpp */,
@@ -144,6 +149,7 @@
 			files = (
 				1D7BC6D4272C54C80069F0CD /* MerkelMain.cpp in Sources */,
 				1D55124B2740A15000C4AFBE /* CSVReader.cpp in Sources */,
+				1D8916352760BECA00769340 /* Wallet.cpp in Sources */,
 				1D1D4491272A307F00C716AF /* OrderBookEntry.cpp in Sources */,
 				1DB84FBD27172CFC00815834 /* main.cpp in Sources */,
 				1D4FF47C275E636E00151D5F /* OrderBook.cpp in Sources */,

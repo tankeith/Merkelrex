@@ -9,6 +9,7 @@
 #include <vector>
 #include "OrderBookEntry.hpp"
 #include "OrderBook.hpp"
+#include "Wallet.hpp"
 
 class MerkelMain
 {
@@ -30,4 +31,6 @@ class MerkelMain
     std::string currentTime;
     OrderBook orderBook{"test.csv"};
 //    OrderBook orderBook{"20200317.csv"};
+    
+    Wallet wallet;
 };
