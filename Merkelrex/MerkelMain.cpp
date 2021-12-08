@@ -37,8 +37,8 @@ void MerkelMain::printMenu()
     std::cout << "1: Print help " << std::endl;
     // 2 print exchange stats
     std::cout << "2: Print exchange stats " << std::endl;
-    // 3 make an offer
-    std::cout << "3: Make an offer " << std::endl;
+    // 3 make an ask
+    std::cout << "3: Make an ask " << std::endl;
     // 4 make a bid
     std::cout << "4: Make a bid " << std::endl;
     // 5 print wallet
@@ -93,9 +93,16 @@ void MerkelMain::printMarketStats()
 //    }
 }
 
-void MerkelMain::enterOffer()
+void MerkelMain::enterAsk()
 {
-    std::cout << "Make an offer" << std::endl;
+    std::cout << "Make an ask - enter the amount: product, price, amount, e.g. ETH/BTC,200,0.5" << std::endl;
+    std::string input;
+
+    // clears console input buffer from previous streaming operation where we entered 3, which was followed by the endl; character which was stored in the buffer
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+    std::getline(std::cin, input);
+    std::cout << "You typed: " << input << std::endl;
 }
 
 void MerkelMain::enterBid()
@@ -140,7 +147,7 @@ void MerkelMain::processUserOption(int userOption)
     }
     if (userOption == 3)
     {
-        enterOffer();
+        enterAsk();
     }
     if (userOption == 4)
     {
