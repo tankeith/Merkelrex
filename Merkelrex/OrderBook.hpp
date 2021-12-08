@@ -23,6 +23,9 @@ public:
                                           std::string product,
                                           std::string timestamp);
     
+    /** inserts order at the end of the vector and sorts it into the right time position*/
+    void insertOrder(OrderBookEntry& order);
+    
     /** returns the earliest time in the orderbook*/
     std::string getEarliestTime();
     
