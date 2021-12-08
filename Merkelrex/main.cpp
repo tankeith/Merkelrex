@@ -22,6 +22,8 @@ int main()
     wallet.insertCurrency("USDT", 10000);
     std::cout << "Wallet has BTC " << wallet.containsCurrency("USDT", 10) << std::endl;
     std::cout << wallet.toString() << std::endl;
+    wallet.removeCurrency("USDT", 1000);
+    std::cout << wallet.toString() << std::endl;
     
 //    std::vector<double> prices;
 //    std::vector<double> amounts;

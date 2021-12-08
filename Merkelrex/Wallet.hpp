@@ -15,6 +15,8 @@ public:
     Wallet();
     /** insert currency into wallet*/
     void insertCurrency(std::string type, double amount);
+    /** remove currency from wallet*/
+    bool removeCurrency(std::string type, double amount); // bool to show whether it was removed or not
     /** check if wallet contains this much currency or more*/
     bool containsCurrency(std::string type, double amount);
     /** generate string representation of the wallet*/

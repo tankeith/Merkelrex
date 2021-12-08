@@ -5,6 +5,7 @@
 //  Created by Keith Tan on 8/12/21.
 //
 
+#include <iostream>
 #include "Wallet.hpp"
 
 Wallet::Wallet()
@@ -29,6 +30,30 @@ void Wallet::insertCurrency(std::string type, double amount)
     }
     balance += amount;
     currencies[type] = balance;
+}
+
+bool Wallet::removeCurrency(std::string type, double amount)
+{
+    if (amount < 0) // if asked to remove a negative amount
+    {
+        return false;
+    }
+    if (currencies.count(type) == 0) // if we don't have any of that currency in the wallet
+    {
+        std::cout << "No currency for " << type << std::endl;
+        return false;
+    }
+    else // it's there, but do we have enough?
+    {
+        if (containsCurrency(type, amount)) // we have enough
+            {
+                std::cout << "Removing " << type << ": " << amount << std::endl;
+                currencies[type] -= amount;
+                return true;
+            }
+        else // have the currency but not enough
+            return false;
+    }
 }
 
 bool Wallet::containsCurrency(std::string type, double amount)
