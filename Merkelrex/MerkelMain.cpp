@@ -99,7 +99,7 @@ void MerkelMain::enterAsk()
     std::string input;
 
     // clears console input buffer from previous streaming operation where we entered 3, which was followed by the endl; character which was stored in the buffer
-    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+//    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     std::getline(std::cin, input);
     
     std::vector<std::string> tokens = CSVReader::tokenise(input, ',');
@@ -139,10 +139,17 @@ void MerkelMain::gotoNextTimeFrame()
 
 int MerkelMain::getUserOption()
 {
-    int userOption;
-    
+    int userOption = 0;
+    std::string line;
     std::cout << "Type in 1-6" << std::endl;
-    std::cin >> userOption;
+    std::getline(std::cin, line);
+    try{
+    userOption = std::stoi(line); // stringtoint
+    } catch(const std::exception& e)
+    {
+        //
+    }
+//    std::cin >> userOption;
     std::cout << "You chose: " << userOption << std::endl;
     return userOption;
 }
