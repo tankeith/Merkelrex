@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "Wallet.hpp"
+#include "CSVReader.hpp"
 
 Wallet::Wallet()
 {
@@ -76,4 +77,26 @@ std::string Wallet::toString()
         s += currency + " : " + std::to_string(amount) + "\n"; // std::to_string converts from double to string
     }
     return s;
+}
+
+bool Wallet::canFulfillOrder(const OrderBookEntry order)
+{
+    // split product up
+    std::vector<std::string> currs = CSVReader::tokenise(order.product, '/');
+    
+    // ask
+    if (order.orderType == OrderBookType::ask)
+    {
+        double amount = order.amount; // from formula C1 * amount
+        std::string currency = currs[0]; // the first currency
+        return containsCurrency(currency, amount);
+    }
+    // bid
+    if (order.orderType == OrderBookType::bid)
+    {
+        double amount = order.amount * order.price; // from formula C2 * order * price
+        std::string currency = currs[1]; // the second currency
+        return containsCurrency(currency, amount);
+    }
+    return false;
 }

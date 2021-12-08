@@ -8,6 +8,7 @@
 #pragma once
 #include <string>
 #include <map>
+#include "OrderBookEntry.hpp"
 
 class Wallet // constructor
 {
@@ -19,6 +20,8 @@ public:
     bool removeCurrency(std::string type, double amount); // bool to show whether it was removed or not
     /** check if wallet contains this much currency or more*/
     bool containsCurrency(std::string type, double amount);
+    /** checks if the wallet can cope with this ask or bid*/
+    bool canFulfillOrder(const OrderBookEntry order);
     /** generate string representation of the wallet*/
     std::string toString();
     
