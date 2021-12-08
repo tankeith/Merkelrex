@@ -89,6 +89,7 @@ bool Wallet::canFulfillOrder(const OrderBookEntry order)
     {
         double amount = order.amount; // from formula C1 * amount
         std::string currency = currs[0]; // the first currency
+        std::cout << "Wallet::canFulfillOrder " << currency << " : " << amount << std::endl;
         return containsCurrency(currency, amount);
     }
     // bid
@@ -96,6 +97,7 @@ bool Wallet::canFulfillOrder(const OrderBookEntry order)
     {
         double amount = order.amount * order.price; // from formula C2 * order * price
         std::string currency = currs[1]; // the second currency
+        std::cout << "Wallet::canFulfillOrder " << currency << " : " << amount << std::endl;
         return containsCurrency(currency, amount);
     }
     return false;

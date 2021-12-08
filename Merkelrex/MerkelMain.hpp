@@ -29,8 +29,8 @@ class MerkelMain
         void processUserOption(int userOption);
     
     std::string currentTime;
-    OrderBook orderBook{"test.csv"};
-//    OrderBook orderBook{"20200317.csv"};
+//    OrderBook orderBook{"test.csv"};
+    OrderBook orderBook{"20200317.csv"};
     
     Wallet wallet;
 };
