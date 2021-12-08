@@ -100,14 +100,15 @@ void MerkelMain::enterAsk()
 
     // clears console input buffer from previous streaming operation where we entered 3, which was followed by the endl; character which was stored in the buffer
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
     std::getline(std::cin, input);
+    
+    
     std::cout << "You typed: " << input << std::endl;
 }
 
 void MerkelMain::enterBid()
 {
-    std::cout << "Make a bid" << std::endl;
+    std::cout << "Make a bid - enter the amount" << std::endl;
 }
 
 void MerkelMain::printWallet()

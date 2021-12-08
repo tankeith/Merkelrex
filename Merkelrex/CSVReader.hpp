@@ -15,8 +15,8 @@ class CSVReader
 public:
     CSVReader(); // constructor    
     static std::vector<OrderBookEntry> readCSV(std::string csvFile); // stateless function that doesn't rely on any instance of csvReader called readCSV that's going to return vector of OrderBookEntry objects
-
-private:
     static std::vector<std::string> tokenise(std::string csvLine, char separator);
+    
+private:
     static OrderBookEntry stringsToOBE(std::vector<std::string> strings); // we pass it strings which we get from tokenise
 };
