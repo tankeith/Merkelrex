@@ -36,7 +36,7 @@ std::vector<std::string> OrderBook::getKnownProducts()
     
     return products;
 }
-/** return vector of Orders acording to the sent filters*/
+/** return vector of Orders according to the sent filters*/
 std::vector<OrderBookEntry> OrderBook::getOrders(OrderBookType type,
                                       std::string product,
                                       std::string timestamp)
@@ -103,4 +103,61 @@ void OrderBook::insertOrder(OrderBookEntry& order)
     std::sort(orders.begin(), orders.end(), OrderBookEntry::compareByTimestamp); // sorts orders by timestamp in ascending order
 }
 
-
+// matching engine algorithm
+std::vector<OrderBookEntry> OrderBook::matchAsksToBids(std::string product, std::string timestamp)
+{
+    // pull out 2 sets of orderbook items from orders
+    // asks = orderbook.asks in this timeframe
+    std::vector<OrderBookEntry> asks = getOrders(OrderBookType::ask,
+                                                 product,
+                                                 timestamp);
+    
+    // bids = orderbook.bids in this timeframe
+    std::vector<OrderBookEntry> bids = getOrders(OrderBookType::bid,
+                                                 product,
+                                                 timestamp);
+    // sales = []
+    std::vector<OrderBookEntry> sales;
+    // sort asks lowest first
+    std::sort(asks.begin(), asks.end(), OrderBookEntry::compareByPriceAsc);
+    // sort bids highest first
+    std::sort(bids.begin(), bids.end(), OrderBookEntry::compareByPriceDesc);
+ 
+    // for ask in asks
+    for (OrderBookEntry& ask : asks)
+    {
+        // for bid in bids
+        for (OrderBookEntry& bid : bids)
+        {
+            if (bid.price >= ask.price) // a successful match, we have 3 possible scenarios as follows
+            {
+                // sale = new order()
+                // sale.price = ask.price
+                OrderBookEntry sale{ask.price, 0, timestamp, product, OrderBookType::sale};
+                if (bid.amount == ask.amount) // bid completely clears ask
+                {
+                    sale.amount = ask.amount;
+                    sales.push_back(sale);
+                    bid.amount = 0; // reset bid so that it's not processed again
+                    break; // we don't need to process this ask anymore, so we break and process next ask
+                }
+                if (bid.amount > ask.amount) // ask is completely fulfilled, slice the bid
+                {
+                    sale.amount = ask.amount;
+                    sales.push_back(sale);
+                    bid.amount = bid.amount - ask.amount; // we adjust the bid in place so that it can be used to process the next ask
+                    break; // ask is completely fulfilled, so go to next ask
+                }
+                if (bid.amount < ask.amount) // bid is completely fulfilled, slice the ask
+                {
+                    sale.amount = bid.amount;
+                    sales.push_back(sale);
+                    ask.amount = ask.amount - bid.amount; // update the bid and allow further bids to process the remaining amount
+                    bid.amount = 0; // make sure the bid is not processed again
+                    continue; // some ask remains so go to the next bid
+                }
+            }
+        }
+    }
+    return sales;
+}

@@ -26,6 +26,9 @@ public:
     /** inserts order at the end of the vector and sorts it into the right time position*/
     void insertOrder(OrderBookEntry& order);
     
+    /** algorithm for matching engine*/
+    std::vector<OrderBookEntry> matchAsksToBids(std::string product, std::string timestamp);
+    
     /** returns the earliest time in the orderbook*/
     std::string getEarliestTime();
     

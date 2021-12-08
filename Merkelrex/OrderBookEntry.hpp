@@ -8,7 +8,7 @@
 #pragma once
 #include <string>
 
-enum class OrderBookType{bid, ask, unknown};
+enum class OrderBookType{bid, ask, unknown, sale};
 
 class OrderBookEntry
 {
@@ -27,6 +27,16 @@ public:
     static bool compareByTimestamp(const OrderBookEntry& e1, const OrderBookEntry& e2)
     {
         return e1.timestamp < e2.timestamp;
+    }
+    
+    // sorts orders by price from asc to desc and vice versa
+    static bool compareByPriceAsc(OrderBookEntry& e1, OrderBookEntry& e2)
+    {
+        return e1.price < e2.price;
+    }
+    static bool compareByPriceDesc(OrderBookEntry& e1, OrderBookEntry& e2)
+    {
+        return e1.price > e2.price;
     }
     
     // data members holding data coming in through the constructor
