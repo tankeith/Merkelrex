@@ -23,6 +23,8 @@ public:
                                           std::string product,
                                           std::string timestamp);
     
+    std::string getEarliestTime();
+    
     // static cos we're going to pass it a set of orders that it will operate on
     static double getHighPrice(std::vector<OrderBookEntry>& orders);
     static double getLowPrice(std::vector<OrderBookEntry>& orders);
