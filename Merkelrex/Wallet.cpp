@@ -43,5 +43,12 @@ bool Wallet::containsCurrency(std::string type, double amount)
 
 std::string Wallet::toString()
 {
-    return "oink";
+    std::string s; // stores string message as we build it
+    for(std::pair<std::string, double> pair : currencies) // std::pair used to represent one of the items in the map
+    {
+        std::string currency = pair.first; // the first item out of the pair
+        double amount = pair.second; // the second item out of the pair
+        s += currency + " : " + std::to_string(amount) + "\n"; // std::to_string converts from double to string
+    }
+    return s;
 }

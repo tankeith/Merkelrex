@@ -21,6 +21,6 @@ public:
     std::string toString();
     
 private:
-    /** map is the data type used to store the currency and wallet; it maps from string to double*/
+    /** map is the data type used to store the currencies and their amounts; it maps from string to double*/
     std::map<std::string, double> currencies;
 };
