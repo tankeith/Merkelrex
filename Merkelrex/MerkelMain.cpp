@@ -119,6 +119,7 @@ void MerkelMain::enterAsk()
                                                          currentTime,
                                                          tokens[0],
                                                          OrderBookType::ask);
+            obe.username = "simuser";
             if (wallet.canFulfillOrder(obe))
             {
                 std::cout << "Wallet looks good. " << std::endl;
@@ -158,6 +159,7 @@ void MerkelMain::enterBid()
                                                          currentTime,
                                                          tokens[0],
                                                          OrderBookType::bid);
+            obe.username = "simuser";
             if (wallet.canFulfillOrder(obe))
             {
                 std::cout << "Wallet looks good. " << std::endl;
