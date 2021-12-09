@@ -19,7 +19,7 @@ OrderBookEntry::OrderBookEntry(double _price,
   timestamp(_timestamp),
   product(_product),
   orderType(_orderType),
-  username(_username) // takes the username and assigning onto the username variable inside the object
+  username(_username) // takes the entered username and assigning onto the username variable inside the object
 {
     
 }

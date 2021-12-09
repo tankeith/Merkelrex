@@ -8,7 +8,7 @@
 #pragma once
 #include <string>
 
-enum class OrderBookType{bid, ask, unknown, sale};
+enum class OrderBookType{bid, ask, unknown, asksale, bidsale};
 
 class OrderBookEntry
 {
