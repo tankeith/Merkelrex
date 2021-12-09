@@ -11,13 +11,15 @@ OrderBookEntry::OrderBookEntry(double _price,
                double _amount,
                std::string _timestamp,
                std::string _product,
-               OrderBookType _orderType)
+               OrderBookType _orderType,
+               std::string _username) // no need to rewrite default specifier here as it's only needed in the header file
 // initialization list
 : price(_price),
   amount(_amount),
   timestamp(_timestamp),
   product(_product),
-  orderType(_orderType)
+  orderType(_orderType),
+  username(_username) // takes the username and assigning onto the username variable inside the object
 {
     
 }
